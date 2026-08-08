@@ -5,6 +5,13 @@ import { motion } from 'framer-motion';
 import { Search, Sparkles } from 'lucide-react';
 
 export function Hero() {
+  const examples = [
+    "Compress an image",
+    "Merge PDFs",
+    "Remove a background",
+    "Convert a file"
+  ];
+
   return (
     <section className="relative overflow-hidden py-20 md:py-32 bg-gradient-to-b from-indigo-500/5 via-transparent to-transparent">
       {/* Decorative Blur Backgrounds */}
@@ -19,8 +26,8 @@ export function Hero() {
           transition={{ duration: 0.4 }}
           className="inline-flex items-center gap-1.5 rounded-full border border-indigo-500/20 bg-indigo-500/5 px-3 py-1 text-xs font-semibold text-indigo-600 dark:text-indigo-400"
         >
-          <Sparkles className="h-3.5 w-3.5" />
-          <span>Curated directory for builders</span>
+          <Sparkles className="h-3.5 w-3.5 animate-pulse" />
+          <span>⚡ Quick digital fixes</span>
         </motion.div>
 
         {/* Title */}
@@ -30,9 +37,9 @@ export function Hero() {
           transition={{ delay: 0.1, duration: 0.5 }}
           className="mt-6 font-heading text-4xl font-extrabold tracking-tight sm:text-6xl text-foreground"
         >
-          Find the best tools to <br className="hidden sm:inline" />
+          Whatever you need to fix, <br className="hidden sm:inline" />
           <span className="bg-gradient-to-r from-violet-600 via-indigo-600 to-cyan-500 bg-clip-text text-transparent dark:from-violet-400 dark:via-indigo-400 dark:to-cyan-400">
-            accelerate your workflow
+            there&apos;s a tool for it.
           </span>
         </motion.h1>
 
@@ -43,7 +50,7 @@ export function Hero() {
           transition={{ delay: 0.2, duration: 0.5 }}
           className="mx-auto mt-6 max-w-xl text-base md:text-lg text-muted-foreground"
         >
-          Explore a curated catalog of high-performance developer utilities, API endpoints, frameworks, and developer kits.
+          Free, fast and simple tools for everyday digital problems.
         </motion.p>
 
         {/* Search Bar */}
@@ -51,19 +58,28 @@ export function Hero() {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.5 }}
-          className="mx-auto mt-10 max-w-lg"
+          className="mx-auto mt-10 max-w-xl"
         >
           <div className="relative group">
             <Search className="absolute top-1/2 left-4 h-5 w-5 -translate-y-1/2 text-muted-foreground group-focus-within:text-indigo-500 transition-colors" />
             <input
               type="text"
-              placeholder="Search tools, categories, frameworks..."
+              placeholder="What do you need help with?"
               className="h-14 w-full rounded-full border border-border/80 bg-background/50 pl-12 pr-6 text-sm outline-none transition-all placeholder:text-muted-foreground focus:border-indigo-500 focus:bg-background focus:ring-2 focus:ring-indigo-500/10 shadow-sm"
             />
-            <div className="absolute top-1/2 right-4 -translate-y-1/2 hidden sm:flex items-center gap-1 text-[10px] font-bold text-muted-foreground/80 bg-muted px-2 py-1 rounded border border-border">
-              <span>⌘</span>
-              <span>K</span>
-            </div>
+          </div>
+
+          {/* Try search tags */}
+          <div className="mt-4 flex flex-wrap items-center justify-center gap-2 text-xs text-muted-foreground">
+            <span>Try:</span>
+            {examples.map((example, i) => (
+              <button
+                key={i}
+                className="cursor-pointer rounded-full border border-border/60 bg-muted/20 px-3 py-1 hover:border-indigo-500/40 hover:bg-indigo-500/5 transition-all text-xs"
+              >
+                {example}...
+              </button>
+            ))}
           </div>
         </motion.div>
       </div>

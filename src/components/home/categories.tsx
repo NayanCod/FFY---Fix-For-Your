@@ -2,16 +2,16 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Cpu, Database, Eye, Globe, Shield, Terminal } from 'lucide-react';
+import { FileText, Image, Type, Sparkles, FolderOpen, CheckSquare } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
 const categories = [
-  { name: 'CLI & Shell', icon: Terminal, count: 18, color: 'text-violet-500 bg-violet-500/10' },
-  { name: 'AI & ML', icon: Cpu, count: 24, color: 'text-indigo-500 bg-indigo-500/10' },
-  { name: 'Databases', icon: Database, count: 12, color: 'text-emerald-500 bg-emerald-500/10' },
-  { name: 'Security', icon: Shield, count: 8, color: 'text-rose-500 bg-rose-500/10' },
-  { name: 'Monitoring', icon: Eye, count: 15, color: 'text-amber-500 bg-amber-500/10' },
-  { name: 'Hosting', icon: Globe, count: 21, color: 'text-blue-500 bg-blue-500/10' },
+  { name: 'PDF', icon: FileText, count: 12, color: 'text-violet-500 bg-violet-500/10' },
+  { name: 'Images', icon: Image, count: 18, color: 'text-indigo-500 bg-indigo-500/10' },
+  { name: 'Text', icon: Type, count: 15, color: 'text-emerald-500 bg-emerald-500/10' },
+  { name: 'AI', icon: Sparkles, count: 8, color: 'text-rose-500 bg-rose-500/10' },
+  { name: 'Files', icon: FolderOpen, count: 10, color: 'text-amber-500 bg-amber-500/10' },
+  { name: 'Productivity', icon: CheckSquare, count: 14, color: 'text-blue-500 bg-blue-500/10' },
 ];
 
 export function Categories() {
@@ -21,7 +21,7 @@ export function Categories() {
         <div className="flex items-center justify-between pb-8">
           <div>
             <h2 className="text-xl font-bold tracking-tight">Explore Categories</h2>
-            <p className="text-xs text-muted-foreground mt-1">Browse developer tools categorized by target capability</p>
+            <p className="text-xs text-muted-foreground mt-1">Simple tools organized by format and type</p>
           </div>
         </div>
 
