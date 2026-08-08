@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Search, Sparkles } from 'lucide-react';
+import Link from 'next/link';
 
 export function Hero() {
   const examples = [
@@ -72,14 +73,29 @@ export function Hero() {
           {/* Try search tags */}
           <div className="mt-4 flex flex-wrap items-center justify-center gap-2 text-xs text-muted-foreground">
             <span>Try:</span>
-            {examples.map((example, i) => (
-              <button
-                key={i}
-                className="cursor-pointer rounded-full border border-border/60 bg-muted/20 px-3 py-1 hover:border-indigo-500/40 hover:bg-indigo-500/5 transition-all text-xs"
-              >
-                {example}...
-              </button>
-            ))}
+            {examples.map((example, i) => {
+              const isCompressor = example === "Compress an image";
+              if (isCompressor) {
+                return (
+                  <Link
+                    key={i}
+                    href="/tools/image-compressor"
+                    className="cursor-pointer rounded-full border border-border/60 bg-muted/20 px-3 py-1 hover:border-indigo-500/40 hover:bg-indigo-500/5 transition-all text-xs"
+                  >
+                    {example}...
+                  </Link>
+                );
+              }
+              return (
+                <button
+                  key={i}
+                  type="button"
+                  className="cursor-pointer rounded-full border border-border/60 bg-muted/20 px-3 py-1 hover:border-indigo-500/40 hover:bg-indigo-500/5 transition-all text-xs"
+                >
+                  {example}...
+                </button>
+              );
+            })}
           </div>
         </motion.div>
       </div>

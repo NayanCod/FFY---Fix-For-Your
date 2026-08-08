@@ -7,6 +7,7 @@ import { useImageCompressor } from '@/hooks/tools/use-image-compressor';
 import { CompressorWorkspace } from '@/components/tools/image-compressor/compressor-workspace';
 import { CompressionSettings } from '@/components/tools/image-compressor/compression-settings';
 import { CompressionResults } from '@/components/tools/image-compressor/compression-results';
+import { ImageCompressorContent } from '@/components/tools/image-compressor/content-sections';
 
 export default function ImageCompressorPage() {
   const {
@@ -51,20 +52,28 @@ export default function ImageCompressorPage() {
   // FAQ list
   const faqs = [
     {
-      question: 'Are my images uploaded to any server?',
-      answer: 'Absolutely not. All image compression and optimization processes run entirely locally within your browser using modern web technologies. Your files never leave your computer.',
+      question: 'Is the image compressor free?',
+      answer: 'Yes, our image compressor is completely free to use. There are no premium plans, usage limits, or hidden fees. You can compress as many images as you need without signup or subscription.',
     },
     {
-      question: 'Which image formats do you support?',
-      answer: 'We support JPG, JPEG, PNG, and WEBP image compression. You can import any of these formats and compress them.',
+      question: 'Are my images uploaded?',
+      answer: 'No, your images are never uploaded to any server. All processing runs locally in your browser on your own device using advanced JavaScript libraries. This ensures complete privacy and allows offline functionality.',
     },
     {
-      question: 'Is there a limit to the file size or number of images?',
-      answer: 'Since the compression utilizes your local machine resources, we support a generous file size up to 20 MB per file, and you can process batches completely free of charge.',
+      question: 'What image formats are supported?',
+      answer: 'We support standard web image formats, specifically JPG (JPEG), PNG, and WebP files. You can upload any mixture of these formats and compress them simultaneously.',
     },
     {
-      question: 'Does local compression reduce the image quality?',
-      answer: 'You have full control over the quality settings with the slider. Setting it to 80% offers the best compromise between visual fidelity and small file sizes.',
+      question: 'Can I compress multiple images?',
+      answer: 'Yes, bulk compression is fully supported. You can select and drop multiple images at once to compress them in parallel directly on your machine.',
+    },
+    {
+      question: 'Can I download all compressed images at once?',
+      answer: 'Absolutely. After batch-compressing your files, you can download them all as a single, neatly packaged ZIP file in one click, or save them individually.',
+    },
+    {
+      question: 'Does image compression reduce quality?',
+      answer: 'Image compression optimizes the file structure and optionally reduces detail to save space. You can use our quality slider to choose the perfect balance of visual clarity and small file size for your needs.',
     },
   ];
 
@@ -92,7 +101,7 @@ export default function ImageCompressorPage() {
 
   return (
     <ToolPage
-      title="Free Image Compressor – Compress Images Online | FixForYou"
+      title="Image Compressor"
       description="Compress JPG, PNG and WebP images quickly and privately. Your images are processed locally in your browser and never uploaded."
       features={features}
       faqs={faqs}
@@ -135,6 +144,9 @@ export default function ImageCompressorPage() {
           handleDownloadAll={handleDownloadAll}
           handleRemoveFile={handleRemoveFile}
         />
+
+        {/* High-quality educational content for SEO */}
+        <ImageCompressorContent />
       </div>
     </ToolPage>
   );

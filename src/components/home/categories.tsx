@@ -6,12 +6,12 @@ import { FileText, Image, Type, Sparkles, FolderOpen, CheckSquare } from 'lucide
 import { Card, CardContent } from '@/components/ui/card';
 
 const categories = [
-  { name: 'PDF', icon: FileText, count: 12, color: 'text-violet-500 bg-violet-500/10' },
-  { name: 'Images', icon: Image, count: 18, color: 'text-indigo-500 bg-indigo-500/10' },
-  { name: 'Text', icon: Type, count: 15, color: 'text-emerald-500 bg-emerald-500/10' },
-  { name: 'AI', icon: Sparkles, count: 8, color: 'text-rose-500 bg-rose-500/10' },
-  { name: 'Files', icon: FolderOpen, count: 10, color: 'text-amber-500 bg-amber-500/10' },
-  { name: 'Productivity', icon: CheckSquare, count: 14, color: 'text-blue-500 bg-blue-500/10' },
+  { name: 'PDF', icon: FileText, label: 'Free', color: 'text-violet-500 bg-violet-500/10' },
+  { name: 'Images', icon: Image, label: 'Local processing', color: 'text-indigo-500 bg-indigo-500/10' },
+  { name: 'Text', icon: Type, label: 'Free', color: 'text-emerald-500 bg-emerald-500/10' },
+  { name: 'AI', icon: Sparkles, label: 'Private', color: 'text-rose-500 bg-rose-500/10' },
+  { name: 'Files', icon: FolderOpen, label: 'Local processing', color: 'text-amber-500 bg-amber-500/10' },
+  { name: 'Productivity', icon: CheckSquare, label: 'No signup', color: 'text-blue-500 bg-blue-500/10' },
 ];
 
 export function Categories() {
@@ -41,7 +41,7 @@ export function Categories() {
                       <Icon className="h-6 w-6" />
                     </div>
                     <span className="mt-4 text-sm font-semibold tracking-tight">{cat.name}</span>
-                    <span className="text-[10px] text-muted-foreground mt-1">{cat.count} tools</span>
+                    <span className="text-[10px] text-muted-foreground mt-1">{cat.label}</span>
                   </CardContent>
                 </Card>
               </motion.div>

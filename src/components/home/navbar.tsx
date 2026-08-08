@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Sparkles, Menu, X, ArrowRight } from 'lucide-react';
+import { Sparkles, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { ThemeToggle } from '@/components/theme-toggle';
 
@@ -41,12 +41,6 @@ export function Navbar() {
               href="#"
               className="text-muted-foreground hover:text-foreground text-sm font-medium transition-colors"
             >
-              Pricing
-            </a>
-            <a
-              href="#"
-              className="text-muted-foreground hover:text-foreground text-sm font-medium transition-colors"
-            >
               Submit Tool
             </a>
           </div>
@@ -54,15 +48,6 @@ export function Navbar() {
           {/* Actions */}
           <div className="hidden items-center gap-3 md:flex">
             <ThemeToggle />
-            <Button variant="ghost" size="sm">
-              Sign In
-            </Button>
-            <Button
-              size="sm"
-              className="rounded-full bg-indigo-600 text-white shadow-sm hover:bg-indigo-500"
-            >
-              Get Started <ArrowRight className="ml-1.5 h-3.5 w-3.5" />
-            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -108,23 +93,8 @@ export function Navbar() {
               href="#"
               className="text-muted-foreground hover:text-foreground text-sm font-medium"
             >
-              Pricing
-            </a>
-            <a
-              href="#"
-              className="text-muted-foreground hover:text-foreground text-sm font-medium"
-            >
               Submit Tool
             </a>
-            <hr className="border-border" />
-            <div className="flex flex-col gap-2">
-              <Button variant="outline" className="w-full">
-                Sign In
-              </Button>
-              <Button className="w-full bg-indigo-600 text-white hover:bg-indigo-500">
-                Get Started
-              </Button>
-            </div>
           </div>
         </motion.div>
       )}
